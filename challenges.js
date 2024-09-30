@@ -27,12 +27,12 @@ HINT 2: Value X is between 50 and 300, if it's >= 50 && <= 300 😉*/
 
 // console.log (billRestaurantTip);
 
-const bill = 275;  
+const bill = 275;
 let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
 
 const billRestaurant = `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`;
 
-console.log (billRestaurant);
+console.log(billRestaurant);
 
 
 
@@ -65,13 +65,21 @@ const calcAverage = (score1, score2, score3) => {
     return (score1 + score2 + score3) / 3;
 };
 
-const scoreDolphins = calcAverage(score1, score2, score3);
-const scoreKoalas = calcAverage(score1, score2, score3);
+function checkWinner(avgDolphins, avgKoalas) {
+    avgDolphins = scoreDolphins;
+    avgKoalas = scoreKoalas;
 
-function checkWinner (avgDolphins, avgKoalas) {
-    if (scoreDolphins > scoreKoalas){
-        console.log(`Dolphins win (${scoreDolphins} vs. ${scoreKoalas}`);
+    if (avgDolphins >= 2*avgKoalas) {
+        console.log(`Dolphins win ${avgDolphins} vs. ${avgKoalas}`);
+    } else if (avgKoalas >= 2*avgDolphins) {
+        console.log(`Koalas win ${avgKoalas} vs. ${avgDolphins}`);
     } else {
-     console.log(`Koalas win (${scoreKoalas} vs. ${scoreDolphins}`);
-     }
+        console.log('No team wins...');
+    }
 }
+
+const scoreDolphins = calcAverage(84, 54, 41);
+
+const scoreKoalas = calcAverage(23, 34, 27);
+
+checkWinner(scoreDolphins,scoreKoalas);
