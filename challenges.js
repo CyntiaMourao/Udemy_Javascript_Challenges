@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 SECTION #2 -- CHALLENGE #1
 
@@ -36,8 +38,6 @@ let markHigherBMII = BMIMarkI > BMIJohnI;
 
 console.log(markHigherBMII);
 
-
-
 /*
 SECTION #2 -- CHALLENGE #2
 
@@ -67,18 +67,20 @@ console.log(BMIMarkII, BMIJohnII);
 /* Write your code below. Good luck! 🙂 */
 
 if (BMIMarkII > BMIJohnII) {
-    console.log("Mark's BMI is higher than John's!");
+  console.log("Mark's BMI is higher than John's!");
 } else {
-    console.log("John's BMI is higher than Mark's!");
+  console.log("John's BMI is higher than Mark's!");
 }
 
 if (BMIMarkII > BMIJohnII) {
-    console.log(`Mark's BMI (${BMIMarkII}) is higher than John's (${BMIJohnII})!`);
+  console.log(
+    `Mark's BMI (${BMIMarkII}) is higher than John's (${BMIJohnII})!`
+  );
 } else {
-    console.log(`John's BMI (${BMIJohnII}) is higher than Mark's (${BMIMarkII})!`);
+  console.log(
+    `John's BMI (${BMIJohnII}) is higher than Mark's (${BMIMarkII})!`
+  );
 }
-
-
 
 /*
 SECTION #2 -- CHALLENGE #3
@@ -101,18 +103,16 @@ TEST DATA: Dolphins scored 96, 108, and 89. Koalas scored 88, 91, and 110.*/
 
 // RESOLUÇÃO:
 
-let scoreDolphinsI = (96 + 108 + 89)/3;
-let scoreKoalasI  = (88 + 91 + 110)/3;
+let scoreDolphinsI = (96 + 108 + 89) / 3;
+let scoreKoalasI = (88 + 91 + 110) / 3;
 
 if (scoreDolphinsI > scoreKoalasI) {
-    console.log ("Dolphins win the trophy");
+  console.log('Dolphins win the trophy');
 } else if (scoreDolphinsI < scoreKoalasI) {
-    console.log ("Koalas win the trophy");
+  console.log('Koalas win the trophy');
 } else {
-    console.log ("Both win the trophy");
+  console.log('Both win the trophy');
 }
-
-
 
 /*
 SECTION #2 -- CHALLENGE #4
@@ -135,17 +135,16 @@ HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
 
 HINT 2: Value X is between 50 and 300, if it's >= 50 && <= 300 😉*/
 
-
 // RESOLUÇÃO:
 
 const billI = 275;
-let tipI = billI >= 50 && billI <= 300 ? billI * 0.15 : billI * 0.20;
+let tipI = billI >= 50 && billI <= 300 ? billI * 0.15 : billI * 0.2;
 
-const billRestaurantI = `The bill was ${billI}, the tip was ${tipI}, and the total value ${billI + tipI}.`;
+const billRestaurantI = `The bill was ${billI}, the tip was ${tipI}, and the total value ${
+  billI + tipI
+}.`;
 
 console.log(billRestaurantI);
-
-
 
 /*
 SECTION #3 -- CHALLENGE #1
@@ -175,29 +174,27 @@ TEST DATA 2: Dolphins scored 85, 54, and 41. Koalas scored 23, 34, and 27.*/
 // RESOLUÇÃO:
 
 const calcAverageII = (score1, score2, score3) => {
-    return (score1 + score2 + score3) / 3;
+  return (score1 + score2 + score3) / 3;
 };
 
 function checkWinnerII(avgDolphinsII, avgKoalasII) {
-    avgDolphinsII = scoreDolphinsII;
-    avgKoalasII = scoreKoalasII;
+  avgDolphinsII = scoreDolphinsII;
+  avgKoalasII = scoreKoalasII;
 
-    if (avgDolphinsII >= 2*avgKoalasII) {
-        console.log(`Dolphins win ${avgDolphinsII} vs. ${avgKoalasII}`);
-    } else if (avgKoalas >= 2*avgDolphins) {
-        console.log(`Koalas win ${avgKoalasII} vs. ${avgDolphinsII}`);
-    } else {
-        console.log('No team wins...');
-    }
+  if (avgDolphinsII >= 2 * avgKoalasII) {
+    console.log(`Dolphins win ${avgDolphinsII} vs. ${avgKoalasII}`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win ${avgKoalasII} vs. ${avgDolphinsII}`);
+  } else {
+    console.log('No team wins...');
+  }
 }
 
 const scoreDolphinsII = calcAverageII(84, 54, 41);
 
 const scoreKoalasII = calcAverageII(23, 34, 27);
 
-checkWinnerII(scoreDolphinsII,scoreKoalasII);
-
-
+checkWinnerII(scoreDolphinsII, scoreKoalasII);
 
 /*
 SECTION #3 -- CHALLENGE #2
@@ -218,26 +215,28 @@ TEST DATA: 125, 555, and 44.*/
 
 // RESOLUÇÃO:
 
-function calcTipII (billII) {
-    if(billII >=50 && billII <= 300) {
-        return billII * 0.15;
-    } else {
-        return billII * 0.20;
-    }
+function calcTipII(billII) {
+  if (billII >= 50 && billII <= 300) {
+    return billII * 0.15;
+  } else {
+    return billII * 0.2;
+  }
 }
 
 const bills = [125, 55, 44];
 
 const tipsII = [calcTipII(bills[0]), calcTipII(bills[1]), calcTipII(bills[2])];
 
-const totals = [bills[0]+tipsII[0], bills[1]+tipsII[1], bills[2]+tipsII[2]];
+const totals = [
+  bills[0] + tipsII[0],
+  bills[1] + tipsII[1],
+  bills[2] + tipsII[2],
+];
 
 console.log(calcTipII(500));
 console.log(bills);
 console.log(tipsII);
 console.log(totals);
-
-
 
 /*
 SECTION #3 -- CHALLENGE #2
@@ -257,7 +256,25 @@ Log to the console who has the higher BMI, together with the full name and the r
 TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.*/
 
 const mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
-}
+  fullName: 'Mark Miller',
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
+  },
+  bmi: this.calcBMI
+};
+
+// const John = {
+//   fullName: 'John Smith',
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     BMI = this.mass / (this.height * this.height);
+//     return BMI;
+//   },
+//   bmi: this.calcBMI,
+// };
+
+console.log(mark.bmi);
