@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
 SECTION #2 -- CHALLENGE #1
@@ -107,11 +107,11 @@ let scoreDolphinsI = (96 + 108 + 89) / 3;
 let scoreKoalasI = (88 + 91 + 110) / 3;
 
 if (scoreDolphinsI > scoreKoalasI) {
-  console.log('Dolphins win the trophy');
+  console.log("Dolphins win the trophy");
 } else if (scoreDolphinsI < scoreKoalasI) {
-  console.log('Koalas win the trophy');
+  console.log("Koalas win the trophy");
 } else {
-  console.log('Both win the trophy');
+  console.log("Both win the trophy");
 }
 
 /*
@@ -186,7 +186,7 @@ function checkWinnerII(avgDolphinsII, avgKoalasII) {
   } else if (avgKoalas >= 2 * avgDolphins) {
     console.log(`Koalas win ${avgKoalasII} vs. ${avgDolphinsII}`);
   } else {
-    console.log('No team wins...');
+    console.log("No team wins...");
   }
 }
 
@@ -239,7 +239,7 @@ console.log(tipsII);
 console.log(totals);
 
 /*
-SECTION #3 -- CHALLENGE #2
+SECTION #3 -- CHALLENGE #3
 
 Let's go back to Mark and John comparing their BMIs!
 
@@ -256,25 +256,96 @@ Log to the console who has the higher BMI, together with the full name and the r
 TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.*/
 
 const mark = {
-  fullName: 'Mark Miller',
+  fullName: "Mark Miller",
   mass: 78,
   height: 1.69,
   calcBMI: function () {
-    this.BMI = this.mass / (this.height * this.height);
-    return this.BMI;
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
   },
-  bmi: this.calcBMI
 };
 
-// const John = {
-//   fullName: 'John Smith',
-//   mass: 92,
-//   height: 1.95,
-//   calcBMI: function () {
-//     BMI = this.mass / (this.height * this.height);
-//     return BMI;
-//   },
-//   bmi: this.calcBMI,
-// };
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
 
-console.log(mark.bmi);
+john.calcBMI();
+mark.calcBMI();
+
+if (john.bmi > mark.bmi) {
+  console.log(
+    `John Smith's BMI (${Math.round(
+      john.bmi
+    )}) is higher than Mark Miller's (${Math.round(mark.bmi)})!`
+  );
+} else {
+  console.log(
+    `Mark Miller's BMI (${Math.round(
+      mark.bmi
+    )}) is higher than John Smith's (${Math.round(john.bmi)})!`
+  );
+}
+
+/*
+SECTION #3 -- CHALLENGE #4
+
+Let's improve Steven's tip calculator even more, this time using loops!
+
+Your tasks:
+Create an array called bills containing all 10 test bill values.
+Create empty arrays for the tips and the totals (tips and totals)
+Use the calcTip function we wrote before (included in the starter code) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52.
+
+BONUS:
+Write a function calcAverage which takes an array called arr as an argument. This function calculates the average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! Here is how to solve it if you feel like it:
+
+First, you will need to add up all values in the array. To do the addition, start by creating a variable sum that starts at 0. Then loop over the array using a for loop. In each iteration, add the current value to the sum variable. This way, by the end of the loop, you have all values added together.
+
+To calculate the average, divide the sum you calculated before by the length of the array (because that's the number of elements).
+
+Call the function with the totals array.*/
+
+const billsIII = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tipsIII = [];
+
+const totalsIII = [];
+
+let calcTipIII = function (billValue) {
+  if (billValue >= 50 && billValue <= 300) {
+    return billValue * 0.15;
+  } else {
+    return billValue * 0.2;
+  }
+};
+
+for (let i = 0; i < billsIII.length; i++) {
+  tipsIII.push(calcTipIII(billsIII[i]));
+}
+
+console.log(tipsIII);
+
+for (let i = 0; i < tipsIII.length; i++) {
+  totalsIII.push(billsIII[i] + tipsIII[i]);
+}
+
+console.log(totalsIII);
+
+let calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  let avg = sum / arr.length;
+  return avg;
+};
+
+console.log(calcAverage(totalsIII));
