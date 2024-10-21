@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit #9 - Challenge #4</title>
+
+    <style>
+      body {
+        background-color: rgb(47, 255, 193);
+      }
+      div.container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      h1 {
+        text-align: center;
+      }
+      #variable,
+      #result {
+        display: block;
+        margin-top: 5px;
+      }
+      textarea {
+        width: 50%;
+      }
+      .inputOutput {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+      }
+      button {
+        width: 20%;
+        height: 40px;
+        margin: 0 5%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <h1>Data Structures and Modern Operators</h1>
+      </div>
+      <div class="inputOutput">
+        <textarea name="variable" id="variable" rows="4"></textarea>
+        <button type="submit" id="btnSubmit">Converter &rArr;</button>
+        <textarea name="result" id="result" rows="4"></textarea>
+      </div>
+      <button id="btnLimpar">Limpar</button>
+    </div>
+
+    <script src="indexChallenge9-4.js"></script>
+  </body>
+</html>
